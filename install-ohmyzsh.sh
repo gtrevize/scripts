@@ -147,7 +147,7 @@ echo
 echo "Checking if OhMyzsh is installed"
 if checkIfExists ${ZSH_HOME} ; then
 	echo -e "\tCloning Oh My zsh repo"
-	sh -c $("curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh")
+	sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 echo
 
