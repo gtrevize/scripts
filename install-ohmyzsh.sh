@@ -154,19 +154,19 @@ fi
 echo
 
 echo "Checking if Oh My zsh syntax-highlighting plugin is installed"
-if checkIfExists ${ZSH_HOME} ; then
+if checkIfExists ${ZSH_PLUGINS}/zsh-syntax-highlighting ; then
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_PLUGINS}/zsh-syntax-highlighting
 fi
 echo
 
 echo "Checking if Oh My zsh autosuggestions plugin is installed"
-if checkIfExists ${ZSH_HOME} ; then
+if checkIfExists ${ZSH_CUSTOM_PLUGINS}/zsh-autosuggestions ; then
 	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM_PLUGINS}/zsh-autosuggestions
 fi
 echo
 
 echo "Checking if Oh My zsh completions plugin is installed"
-if checkIfExists ${ZSH_HOME} ; then
+if checkIfExists ${ZSH_CUSTOM_PLUGINS}/zsh-completions ; then
 	git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM_PLUGINS}/zsh-completions
 fi
 echo
