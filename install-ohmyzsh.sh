@@ -2,11 +2,11 @@
 
 #set -x
 
-ZSH_HOME=~/.oh-my-zsh
-ZSH_CUSTOM=${ZSH_HOME}/custom
-ZSH_CONFIG=~/.zshrc
-P10K_THEME=$ZSH_CUSTOM/themes/powerlevel10k
-P10K_CONFIG=~/.p10k.zsh
+ZSH_HOME="${HOME}/.oh-my-zsh"
+ZSH_CUSTOM="${ZSH_HOME}/custom"
+ZSH_CONFIG="${HOME}/.zshrc"
+P10K_THEME="${ZSH_CUSTOM}/themes/powerlevel10k"
+P10K_CONFIG="${HOME}/.p10k.zsh"
 
 BACKUP_DATE=`date +%m-%d-%Y_%M-%S` 
 BACKUP_ZUFFIX="${BACKUP_DATE}.bak"
@@ -141,13 +141,13 @@ fi
 echo
 
 echo "Checking dependencies"
-checkDependencies curl git
+checkDependencies zsh curl git neofetch
 echo
 
 echo "Checking if OhMyzsh is installed"
 if checkIfExists ${ZSH_HOME} ; then
 	echo -e "\tCloning Oh My zsh repo"
-	curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | bash
+	sh -c $("curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh")
 fi
 echo
 
@@ -161,7 +161,7 @@ echo
 echo "Checking if PowerLevel10K is installed"
 if checkIfExists ${P10K_THEME} ; then
 	echo -e "\tCloning PowerLevel10K theme repo"
-	git clone https://github.com/romkatv/powerlevel10k.git "${P10K_THEME}"
+	git clone https://github.com/romkatv/powerlevel10k.git ${P10K_THEME}
 fi
 echo
 
