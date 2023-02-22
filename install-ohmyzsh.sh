@@ -154,7 +154,7 @@ echo
 echo "Checking if zsh is configured"
 if checkIfExists ${ZSH_CONFIG} ; then
 	echo -e "\tCopying zsh config"
-	curl -fsSL 'https://raw.githubusercontent.com/gtrevize/scripts/master/p10k.zsh' -o ${ZSH_CONFIG}
+	curl -fsSL 'https://raw.githubusercontent.com/gtrevize/scripts/master/zshrc' -o ${ZSH_CONFIG}
 fi
 echo
 
@@ -168,7 +168,7 @@ echo
 echo "Checking if PowerLevel10K is configured"
 if checkIfExists ${P10K_CONFIG} ; then
 	echo -e "\tCopying PowerLevel10K config"
-	curl -fsSL 'https://raw.githubusercontent.com/gtrevize/scripts/master/zshrc' -o ${P10K_CONFIG}
+	curl -fsSL 'https://raw.githubusercontent.com/gtrevize/scripts/master/p10k.zsh' -o ${P10K_CONFIG}
 fi
 
 echo -e "\nDone. Exit and reload your shell"
