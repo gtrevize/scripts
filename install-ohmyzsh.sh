@@ -5,6 +5,8 @@
 ZSH_HOME="${HOME}/.oh-my-zsh"
 ZSH_CUSTOM="${ZSH_HOME}/custom"
 ZSH_CONFIG="${HOME}/.zshrc"
+ZSH_PLUGINS="${ZSH_HOME}/plugins"
+ZSH_CUSTOM_PLUGINS="${ZSH_CUSTOM}/plugins"
 P10K_THEME="${ZSH_CUSTOM}/themes/powerlevel10k"
 P10K_CONFIG="${HOME}/.p10k.zsh"
 
@@ -144,10 +146,28 @@ echo "Checking dependencies"
 checkDependencies zsh curl git neofetch
 echo
 
-echo "Checking if OhMyzsh is installed"
+echo "Checking if Oh My zsh is installed"
 if checkIfExists ${ZSH_HOME} ; then
 	echo -e "\tCloning Oh My zsh repo"
 	sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
+echo
+
+echo "Checking if Oh My zsh syntax-highlighting plugin is installed"
+if checkIfExists ${ZSH_HOME} ; then
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_PLUGINS}/zsh-syntax-highlighting
+fi
+echo
+
+echo "Checking if Oh My zsh autosuggestions plugin is installed"
+if checkIfExists ${ZSH_HOME} ; then
+	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM_PLUGINS}/zsh-autosuggestions
+fi
+echo
+
+echo "Checking if Oh My zsh completions plugin is installed"
+if checkIfExists ${ZSH_HOME} ; then
+	git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM_PLUGINS}/zsh-completions
 fi
 echo
 
